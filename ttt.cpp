@@ -35,7 +35,7 @@ char get_winner(std::vector<char>& board) {
         return board[4];
     } else if ((board[2] == board[5]) && (board[5] == board[8]) && (board[2] == board[8])) {
         return board[5];
-    } else if ((board[0] == board[4]) && (board[4] == board[8]) && (board[1] == board[8])) {
+    } else if ((board[0] == board[4]) && (board[4] == board[8]) && (board[0] == board[8])) {
         return board[8];
     } else if ((board[2] == board[4]) && (board[4] == board[6]) && (board[2] == board[6])) {
         return board[2];
@@ -45,19 +45,12 @@ char get_winner(std::vector<char>& board) {
 }
 
 bool is_draw(std::vector<char>& board) {
-    int winner = get_winner(board);
-
-    if (winner == ' ') {
-        for (const char& symbol : board) {
-            if (symbol == ' ') {
-                return false;
-            }
+    for (const char& symbol : board) {
+        if (symbol == ' ') {
+            return false;
         }
-
-        return true;
     }
-
-    return false;
+    return true;
 }
 
 std::vector<int> take_non_occupied(std::vector<char>& board) {
@@ -113,12 +106,15 @@ int main() {
             board[rand_non_occupied] = opponent;
         }
 
-        char winner = get_winner(board);
 
-        if (is_draw(board)) {
+        if (is_draw(board) == true) {
             std::cout << "Draw!";
             break;
-        } else if (winner == ' ') {
+        }
+        
+        char winner = get_winner(board);
+        
+        if (winner == ' ') {
             draw(board);
             continue;
         } else if (winner == opponent) {
