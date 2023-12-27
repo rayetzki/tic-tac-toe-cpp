@@ -91,17 +91,10 @@ int main() {
         std::cout << "Invalid Input";
         return 1;
     }
-
     
     bool is_retaking = false;
 
     while (true) {
-        if (is_retaking == false) {
-            std::vector<int> non_occupied = take_non_occupied(board);
-            int rand_non_occupied = non_occupied[rand() % non_occupied.size()];
-            board[rand_non_occupied] = opponent;
-        }
-
         int my_move;
         std::cout << "Make your move: ";
         std::cin >> my_move;
@@ -112,6 +105,12 @@ int main() {
         } else {
             board[my_move - 1] = me;
             is_retaking = false;
+        }
+
+        if (is_retaking == false) {
+            std::vector<int> non_occupied = take_non_occupied(board);
+            int rand_non_occupied = non_occupied[rand() % non_occupied.size()];
+            board[rand_non_occupied] = opponent;
         }
 
         char winner = get_winner(board);
