@@ -1,3 +1,6 @@
+.vscode/*
+!.vscode/settings.json
+
 # Prerequisites
 *.d
 
@@ -19,7 +22,6 @@
 # Fortran module files
 *.mod
 *.smod
-.vscode
 
 # Compiled Static libraries
 *.lai
