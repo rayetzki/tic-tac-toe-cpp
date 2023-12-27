@@ -1,0 +1,23 @@
+{
+  "name": "tic-tac-toe-starting",
+  "version": "1.0.0",
+  "description": "Tic Toe written in C++",
+  "main": "ttt.cpp",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rayetzki/tic-tac-toe-cpp.git"
+  },
+  "keywords": [
+    "C++",
+    "Tic-Tac-Toe"
+  ],
+  "author": "Illia Raietskyi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rayetzki/tic-tac-toe-cpp/issues"
+  },
+  "homepage": "https://github.com/rayetzki/tic-tac-toe-cpp#readme"
+}
